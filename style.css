@@ -1,0 +1,156 @@
+.Carousel {
+  margin: 10px auto;
+  max-width: 1340px;
+}
+
+.Carousel-container {
+  position: relative;
+  padding: 0 36px;
+}
+
+.Carousel-stage {
+  overflow: hidden;
+}
+
+.Carousel-content {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  transform: translateX(0);
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+.Carousel-item {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100%;
+}
+
+.Carousel-link {
+  display: block;
+}
+
+.Carousel-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* コントローラ */
+.Carousel-button {
+  position: absolute;
+  top: 0;
+  width: 36px;
+  height: 100%;
+  overflow: hidden;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  color: deepskyblue;
+  transition-property: color;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+}
+
+.Carousel-button:disabled {
+  color: lavender;
+}
+
+.Carousel-button:not(:disabled):hover {
+  color: deeppink;
+}
+
+.Carousel-button::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: '';
+}
+
+.Carousel-button::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 18px;
+  height: 18px;
+  content: '';
+}
+
+.Carousel-button._prev {
+  left: 0;
+}
+
+.Carousel-button._prev::after {
+  right: 0;
+  left: 8px;
+  box-shadow: inset 4px 4px 0 currentColor;
+  transform: rotate(-45deg);
+}
+
+.Carousel-button._next {
+  right: 0;
+}
+
+.Carousel-button._next::after {
+  right: 8px;
+  left: 0;
+  box-shadow: inset -4px 4px 0 currentColor;
+  transform: rotate(45deg);
+}
+
+/* 下部エリア */
+.Carousel-footer {
+  margin-top: 10px;
+  padding: 0 36px;
+}
+
+/* 再生/一時停止ボタン */
+
+/* インジケータ */
+.Carousel-indicator {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.Carousel-indicatorItem {
+  margin: 0 5px;
+  width: 16px;
+  height: 16px;
+}
+
+.Carousel-indicatorButton {
+  position: relative;
+  box-sizing: border-box;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 50%;
+  border-color: currentColor;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: transparent;
+  background-image: none;
+  color: deepskyblue;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+}
+
+.Carousel-indicatorButton:disabled {
+  background-color: deepskyblue;
+}
+
+.Carousel-indicatorButton::before {
+  display: block;
+  padding-top: 100%;
+  width: 100%;
+  height: 0;
+  content: '';
+}
