@@ -154,3 +154,53 @@
   height: 0;
   content: '';
 }
+
+/* 再生/一時停止ボタン */
+.Carousel-playButton,
+.Carousel-pauseButton {
+  position: absolute;
+  margin: -2px 0 -2px;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: currentColor;
+  border-radius: 0;
+  padding: 18px 0 0;
+  width: 20px;
+  height: 0;
+  overflow: hidden;
+  background-color: transparent;
+  color: tomato;
+}
+
+.Carousel-playButton:disabled,
+.Carousel-pauseButton:disabled {
+  visibility: hidden;
+}
+
+.Carousel-playButton::before,
+.Carousel-pauseButton::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  content: "";
+}
+
+.Carousel-playButton::before {
+  right: 1px;
+  width: 0;
+  height: 0;
+  border-width: 6px 0 6px 8px;
+  border-style: solid;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.Carousel-pauseButton::before {
+  width: 10px;
+  height: 10px;
+  background-image: linear-gradient(to right, currentColor 4px, transparent 4px, transparent 6px, currentColor 6px);
+}
